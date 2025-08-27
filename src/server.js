@@ -3,17 +3,21 @@ const { parse } = require('url');
 const fs = require('fs');
 const express = require("express");
 const next = require("next");
-const apiRoutes = require("./src/routes"); 
+const apiRoutes = require("./routes"); 
 
 const dev = process.env.NODE_ENV !== "production";
   const port = process.env.PORT || 10000;
+  const hostname = "0.0.0.0"; // use 0.0.0.0 for hosting, localhost for local dev
+
 const app = next({ dev });
 const handle = app.getRequestHandler();
 let  parsedUrl = '';
 const httpsOptions = {
-    key: fs.readFileSync('../src/ssl.key/server.key'),
-  cert: fs.readFileSync('../src/ssl.crt/server.crt'),
+    key: fs.readFileSync('./ssl.key/server.key'),
+  cert: fs.readFileSync('./ssl.crt/server.crt'),
 };
+
+
 
 
 
@@ -30,9 +34,16 @@ app.prepare().then(() => {
   expressApp.use("/api", apiRoutes);
 
   // Next.js handles everything else
-  expressApp.all("*", (req, res) => {
-    return handle(req, res, parse(req.url, true));
-  });
+// ✅ works in Express 5+
+/* expressApp.all("/*", (req, res) => {
+  return handle(req, res, parse(req.url, true));
+});
+*/
+
+// or more explicit:
+expressApp.use((req, res) => {
+  return handle(req, res, parse(req.url, true));
+});
 
       
     createServer(httpsOptions,expressApp ).listen(port, hostname, () => {
