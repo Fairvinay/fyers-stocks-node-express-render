@@ -1,4 +1,5 @@
-const { createServer } = require('https');
+//const { createServer } = require('https');
+const { createServer } = require("http");   // 👈 switch to http
 const { parse } = require('url');
 const fs = require('fs');
 const express = require("express");
@@ -6,8 +7,8 @@ const next = require("next");
 const apiRoutes = require("./routes"); 
 
 const dev = process.env.NODE_ENV !== "production";
-  const port = process.env.PORT || 10000;
-  const hostname = "0.0.0.0"; // use 0.0.0.0 for hosting, localhost for local dev
+  const port = process.env.PORT || 3003; //10000;
+//  const hostname = "0.0.0.0"; // use 0.0.0.0 for hosting, localhost for local dev
 
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -46,7 +47,8 @@ expressApp.use((req, res) => {
 });
 
       
-    createServer(httpsOptions,expressApp ).listen(port, hostname, () => {
+   // createServer(httpsOptions,expressApp ).listen(port, hostname, () => {
+    createServer(expressApp ).listen(port, hostname, () => {
       console.log(`> Dev HTTPS server ready at https://${hostname}:${port}`);
     });
 
