@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 var fyersModel= require("fyers-api-v3").fyersModel
 //var client_id= "7GSQW68AZ4-100"
-var client_id= "4UD3EKLUCJ-100"
+var client_id= "TK2NQ6EYHR-100 "
 //var redirectUrl  = "https://192.168.1.8:56322/fyersauthcodeverify"
 var redirectUrl  = "https://fyers-stocks-node-express-render.onrender.com/api/fyersauthcodeverify"
 //var redirectUrl  = "https://store-stocks.netlify.app/.netlify/functions/netlifystockfyersticker/api/fyersauthcodeverify"
