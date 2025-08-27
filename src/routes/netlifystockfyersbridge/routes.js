@@ -17,7 +17,7 @@ var fyersModel= fyersV3.fyersModel
 var client_id= "TK2NQ6EYHR-100 "; // "7GSQW68AZ4-100" ; // PROD 
 var secret_key = "RVMBOSEBMY"; 		 // "MGY8LRIY0M"; // PROD 
 //var redirectUrl  = "https://192.168.1.8:56322/fyersauthcodeverify"
-var redirectUrl  = "https://fyers-stocks-node-express-render.onrender.com/.netlify/functions/netlifystockfyersbridge/api/fyersauthcodeverify"
+var redirectUrl  = "https://fyers-stocks-node-express-render.onrender.com/api/fyersauthcodeverify"
 //var redirectUrl  = "https://store-stocks.netlify.app/.netlify/functions/netlifystockfyersbridge/api/fyersauthcodeverify"
 var fyers= new fyersModel({"path":"./","enableLogging":true})
 fyers.setAppId(client_id)
