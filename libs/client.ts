@@ -21,10 +21,10 @@ const FYERSAPICANCELORDER = 'https://fyers-stocks-node-express-render.onrender.c
 const FYERSAPIBUYORDER = 'https://fyers-stocks-node-express-render.onrender.com/api/fyersplacebuyorder'
 const FYERSAPISELLORDER = 'https://fyers-stocks-node-express-render.onrender.com/api/fyersplacesellorder'
 
-const FYERSAPITICKERURL = 'https://fyers-stocks-node-express-render.onrender.com/.netlify/functions/netlifystockfyersticker/api/fyersgetticker'
-const FYERSAPITHREESECQUOTE = 'https://fyers-stocks-node-express-render.onrender.com/.netlify/functions/netlifystockfyersticker/api/fyersgetbsecequote'
-const FYERSAPITICKERACCESTOKEN = 'https://fyers-stocks-node-express-render.onrender.com/.netlify/functions/netlifystockfyersticker/api/fyersaccesstoken'
-const FYERSAPITICKERURLCLOSE = 'https://fyers-stocks-node-express-render.onrender.com/.netlify/functions/netlifystockfyersticker/api/close'
+const FYERSAPITICKERURL = 'https://fyers-stocks-node-express-render.onrender.com/api/fyersgetticker'
+const FYERSAPITHREESECQUOTE = 'https://fyers-stocks-node-express-render.onrender.com/api/fyersgetbsecequote'
+const FYERSAPITICKERACCESTOKEN = 'https://fyers-stocks-node-express-render.onrender.com/api/fyersaccesstoken'
+const FYERSAPITICKERURLCLOSE = 'https://fyers-stocks-node-express-render.onrender.com/api/close'
 const FYERSAPINSECSV = 'https://fyers-stocks-node-express-render.onrender.com';
 
 export { API , FYERSAPI ,FYERSAPILOGINURL , FYERSAPINSECSV , FYERSAPITRADEBOOKURL ,FYERSAPIHOLDINGSURL ,
